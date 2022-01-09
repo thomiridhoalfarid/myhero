@@ -1,0 +1,38 @@
+<!--Simple html page. Bokeh plot will be embedded in the body-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+            body {
+              font-family: 'Noto Sans', sans-serif;
+              -webkit-font-smoothing: antialiased;
+              text-rendering: optimizeLegibility;
+              color: #000000;
+              background: #FFFFFF;
+             }
+        </style>
+        <meta charset="utf-8">
+
+        {{ bokeh_css }}
+        {{ bokeh_js }}
+    </head>
+
+    <body>
+        <!--Add a heading above the plots-->
+        <div>
+            <h2>Plot US Economic Data.</h2>
+            You can look up more series codes at the homepage for  
+            <a target="_blank" href="https://fred.stlouisfed.org/">Federal Reserve Economic Data</a>.
+            <br>
+            <br>
+        </div>
+
+        <!--Insert the Bokeh plots and widgets here-->
+        <div>
+        {{ plot_div|indent(8) }}
+        {{ plot_script|indent(8) }}
+        </div>
+    </body>
+</html>
